@@ -1,0 +1,99 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "Table-x86_64-unknown-linux-gnu-debug.module": ["<Table-x86_64-unknown-linux-gnu-debug.module>"]
+  "main": ["<todo-x86_64-unknown-linux-gnu-debug.exe>","<todo-x86_64-unknown-linux-gnu-debug.module>"]
+  "test": ["<todo-x86_64-unknown-linux-gnu-debug.exe>","<todo-x86_64-unknown-linux-gnu-debug.module>"]
+  "todo-x86_64-unknown-linux-gnu-debug.exe": ["<todo-x86_64-unknown-linux-gnu-debug.exe>"]
+  "todo-x86_64-unknown-linux-gnu-debug.module": ["<todo-x86_64-unknown-linux-gnu-debug.module>"]
+default: "main"
+nodes:
+  "/home/charlie/Programming/Swift/ToDo/Sources/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/Table.swiftmodule"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swiftmodule.o"]
+    description: "Wrapping AST for Table for debugging"
+    args: ["/usr/lib/swift/bin/swiftc","-modulewrap","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/Table.swiftmodule","-o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Border.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Column.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Configuration.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/DefaultStringInterpolation+Table.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Table.swift"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/sources"]
+    description: "Write auxiliary file /home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/sources"
+
+  "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/usr/lib/swift/bin/swiftc"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt"
+
+  "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/charlie/Programming/Swift/ToDo/Sources/main.swift"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/sources"]
+    description: "Write auxiliary file /home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/sources"
+
+  "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/todo.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/todo.swiftmodule"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/todo.swiftmodule.o"]
+    description: "Wrapping AST for todo for debugging"
+    args: ["/usr/lib/swift/bin/swiftc","-modulewrap","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/todo.swiftmodule","-o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/todo.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swiftmodule.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/todo.swiftmodule.o"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.product/Objects.LinkFileList"
+
+  "<Table-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/Table.swiftmodule"]
+    outputs: ["<Table-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<todo-x86_64-unknown-linux-gnu-debug.exe>":
+    tool: phony
+    inputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo"]
+    outputs: ["<todo-x86_64-unknown-linux-gnu-debug.exe>"]
+
+  "<todo-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/todo.swiftmodule"]
+    outputs: ["<todo-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "C.Table-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Border.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Column.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Configuration.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/DefaultStringInterpolation+Table.swift","/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Table.swift","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/sources"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/Table.swiftmodule"]
+    description: "Compiling Swift Module 'Table' (5 sources)"
+    args: ["/usr/lib/swift/bin/swiftc","-module-name","Table","-emit-dependencies","-emit-module","-emit-module-path","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/Table.swiftmodule","-output-file-map","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/output-file-map.json","-parse-as-library","-incremental","-c","@/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/sources","-I","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-g","-Xcc","-fPIC","-Xcc","-g","-suppress-warnings","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.todo-x86_64-unknown-linux-gnu-debug.exe":
+    tool: shell
+    inputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swiftmodule.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/todo.swiftmodule.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.product/Objects.LinkFileList"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo"]
+    description: "Linking ./.build/x86_64-unknown-linux-gnu/debug/todo"
+    args: ["/usr/lib/swift/bin/swiftc","-L","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug","-o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo","-module-name","todo","-emit-executable","-Xlinker","--defsym","-Xlinker","main=todo_main","-Xlinker","-rpath=$ORIGIN","@/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.product/Objects.LinkFileList","-target","x86_64-unknown-linux-gnu","-g"]
+
+  "C.todo-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/charlie/Programming/Swift/ToDo/Sources/main.swift","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/Table.swiftmodule","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/sources"]
+    outputs: ["/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main.swift.o","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/todo.swiftmodule"]
+    description: "Compiling Swift Module 'todo' (1 sources)"
+    args: ["/usr/lib/swift/bin/swiftc","-module-name","todo","-emit-dependencies","-emit-module","-emit-module-path","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules/todo.swiftmodule","-output-file-map","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/output-file-map.json","-incremental","-c","@/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/sources","-I","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","todo_main","-color-diagnostics","-swift-version","6","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","todo","-Xcc","-fno-omit-frame-pointer"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/home/charlie/Programming/Swift/ToDo/Sources/","/home/charlie/Programming/Swift/ToDo/Package.swift","/home/charlie/Programming/Swift/ToDo/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

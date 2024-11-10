@@ -1,0 +1,35 @@
+{
+  "": {
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/master.swiftdeps"
+  },
+  "/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Border.swift": {
+    "dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border.d",
+    "object": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border.swift.o",
+    "swiftmodule": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border~partial.swiftmodule",
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Border.swiftdeps"
+  },
+  "/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Column.swift": {
+    "dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column.d",
+    "object": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column.swift.o",
+    "swiftmodule": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column~partial.swiftmodule",
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Column.swiftdeps"
+  },
+  "/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Configuration.swift": {
+    "dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration.d",
+    "object": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration.swift.o",
+    "swiftmodule": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration~partial.swiftmodule",
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Configuration.swiftdeps"
+  },
+  "/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/DefaultStringInterpolation+Table.swift": {
+    "dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table.d",
+    "object": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table.swift.o",
+    "swiftmodule": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table~partial.swiftmodule",
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/DefaultStringInterpolation+Table.swiftdeps"
+  },
+  "/home/charlie/Programming/Swift/ToDo/.build/checkouts/Table/Sources/Table.swift": {
+    "dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.d",
+    "object": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swift.o",
+    "swiftmodule": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table~partial.swiftmodule",
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/Table.build/Table.swiftdeps"
+  }
+}

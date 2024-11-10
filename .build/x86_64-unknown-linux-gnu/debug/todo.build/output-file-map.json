@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/master.swiftdeps"
+  },
+  "/home/charlie/Programming/Swift/ToDo/Sources/main.swift": {
+    "dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main.d",
+    "object": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main.swift.o",
+    "swiftmodule": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main~partial.swiftmodule",
+    "swift-dependencies": "/home/charlie/Programming/Swift/ToDo/.build/x86_64-unknown-linux-gnu/debug/todo.build/main.swiftdeps"
+  }
+}
